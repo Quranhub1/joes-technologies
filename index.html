@@ -323,6 +323,17 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
+    // Keep section navigation working without leaving a fragment in the address bar.
+    function cleanSectionHash() {
+      if (window.location.hash) {
+        window.history.replaceState(null, '', window.location.pathname + window.location.search);
+      }
+    }
+    window.addEventListener('hashchange', cleanSectionHash);
+    window.addEventListener('load', () => {
+      if (window.location.hash) window.setTimeout(cleanSectionHash, 0);
+    });
+
     // Uploaded project images are shown first; remaining SVGs are fallback placeholders.
     // Each project image panel rotates through the available images every five seconds.
     const imageFiles = [
