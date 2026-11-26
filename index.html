@@ -14,7 +14,7 @@
     :root{--bg:#0b1020;--panel:#111a2e;--panel2:#151f35;--text:#f4f7ff;--muted:#aab5ca;--line:rgba(255,255,255,.1);--cyan:#64e3d2;--blue:#7798ff;--max:1160px}
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 80% 0%,rgba(79,113,220,.18),transparent 34%),radial-gradient(ellipse at 0% 35%,rgba(60,210,190,.1),transparent 30%),var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.65}
     a{color:inherit;text-decoration:none}.wrap{width:min(var(--max),calc(100% - 44px));margin:auto}.topbar{position:sticky;top:0;z-index:20;background:rgba(11,16,32,.82);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
-    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px;font:700 19px 'Space Grotesk',sans-serif;letter-spacing:-.5px}.brand-mark{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--cyan),var(--blue));display:grid;place-items:center;color:#08101e;font-weight:700}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px;font:700 19px 'Space Grotesk',sans-serif;letter-spacing:-.5px}.brand-mark{width:42px;height:42px;object-fit:contain;border-radius:10px;display:block}
     .links{display:flex;align-items:center;gap:28px;color:var(--muted);font-size:14px}.links a:hover{color:var(--cyan)}.nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:10px;background:var(--cyan);color:#07131d;font-weight:700;font-size:14px;transition:.2s}.nav-cta:hover,.btn:hover{transform:translateY(-2px);filter:brightness(1.06)}
     .hero{padding:112px 0 94px;position:relative}.eyebrow{display:inline-flex;align-items:center;gap:9px;color:var(--cyan);font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase}.eyebrow:before{content:'';width:24px;height:1px;background:var(--cyan)}
     h1,h2,h3,p{margin-top:0}h1,h2,h3{font-family:'Space Grotesk',sans-serif;letter-spacing:-1.7px}h1{font-size:clamp(46px,7vw,78px);line-height:1.04;max-width:850px;margin:22px 0}.gradient{background:linear-gradient(100deg,var(--cyan),#a9baff 75%);-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -32,7 +32,7 @@
 <body>
   <header class="topbar">
     <div class="wrap nav">
-      <a class="brand" href="#home" aria-label="Joes Technologies home"><span class="brand-mark">JT</span><span>Joes Technologies</span></a>
+      <a class="brand" href="#home" aria-label="Joes Technologies home"><img class="brand-mark" src="site-images/logo.png" alt="Joes Technologies logo"><span>Joes Technologies</span></a>
       <nav class="links" aria-label="Main navigation">
         <a href="#services">What we do</a><a href="#about">About</a><a href="#work">Our work</a><a href="#contact">Contact</a>
       </nav>
@@ -114,9 +114,11 @@
 
     // Replace these 20 SVG placeholders with your own images using the same filenames.
     // Each project image panel rotates through all 20 files every five seconds.
-    const imageFiles = Array.from({ length: 20 }, (_, index) =>
-      `site-images/image-${index + 1}.svg`
-    );
+    const imageFiles = [
+      'site-images/image1.webp',
+      'site-images/image2.webp',
+      ...Array.from({ length: 20 }, (_, index) => `site-images/image-${index + 1}.svg`)
+    ];
 
     document.querySelectorAll('[data-image-rotation]').forEach((panel, panelIndex) => {
       const image = document.createElement('img');
