@@ -22,7 +22,7 @@
     section{padding:82px 0}.section-head{max-width:650px;margin-bottom:34px}.section-head h2{font-size:clamp(32px,4vw,46px);line-height:1.12;margin:14px 0}.section-head p{color:var(--muted)}
     .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{padding:27px;background:linear-gradient(160deg,rgba(21,31,53,.94),rgba(14,22,40,.94));border:1px solid var(--line);border-radius:17px;min-height:210px}.icon{width:44px;height:44px;display:grid;place-items:center;border-radius:12px;background:rgba(100,227,210,.1);color:var(--cyan);font-size:20px;margin-bottom:22px}.card h3{font-size:20px;margin-bottom:9px;letter-spacing:-.5px}.card p{color:var(--muted);font-size:14px;margin:0}
     .about{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}.about-panel{border:1px solid var(--line);border-radius:20px;padding:30px;background:linear-gradient(145deg,rgba(100,227,210,.08),rgba(119,152,255,.08))}.about-panel .big{font:700 54px 'Space Grotesk';color:var(--cyan);line-height:1}.about-panel p{color:var(--muted);margin:12px 0 0}.ticks{list-style:none;padding:0;margin:25px 0 0}.ticks li{padding:9px 0;color:var(--muted);border-bottom:1px solid var(--line)}.ticks li:before{content:'✓';color:var(--cyan);font-weight:700;margin-right:12px}
-    .project{display:flex;flex-direction:column;min-height:260px}.image-placeholder{height:150px;border:1px dashed rgba(170,181,202,.45);border-radius:12px;background:linear-gradient(135deg,rgba(100,227,210,.07),rgba(119,152,255,.08));display:grid;place-items:center;text-align:center;color:#aab5ca;font-size:13px;margin:0 0 20px;overflow:hidden}.image-placeholder span{display:block;font-size:28px;color:#64e3d2;margin-bottom:5px}.contact-details{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}.contact-details a{border:1px solid var(--line);background:rgba(11,16,32,.3);padding:11px 14px;border-radius:10px;font-size:14px;color:var(--text)}.project-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:25px}.project-tag{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--cyan);font-weight:700}.project h3{font-size:25px}.project p{color:var(--muted);font-size:14px}.project a{margin-top:auto;color:var(--cyan);font-size:14px;font-weight:700}
+    .project{display:flex;flex-direction:column;min-height:260px}.image-placeholder{height:180px;border:1px dashed rgba(170,181,202,.45);border-radius:12px;background:linear-gradient(135deg,rgba(100,227,210,.07),rgba(119,152,255,.08));display:grid;place-items:center;text-align:center;color:#aab5ca;font-size:13px;margin:0 0 20px;overflow:hidden;position:relative}.image-placeholder span{display:block;font-size:28px;color:#64e3d2;margin-bottom:5px}.image-placeholder img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s ease}.image-placeholder img.is-visible{opacity:1}.image-placeholder .placeholder-copy{position:relative;z-index:1;padding:12px}.image-placeholder.has-image .placeholder-copy{display:none}.contact-details{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}.contact-details a{border:1px solid var(--line);background:rgba(11,16,32,.3);padding:11px 14px;border-radius:10px;font-size:14px;color:var(--text)}.project-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:25px}.project-tag{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--cyan);font-weight:700}.project h3{font-size:25px}.project p{color:var(--muted);font-size:14px}.project a{margin-top:auto;color:var(--cyan);font-size:14px;font-weight:700}
     .contact{border:1px solid rgba(100,227,210,.22);border-radius:22px;padding:48px;background:linear-gradient(120deg,rgba(100,227,210,.09),rgba(119,152,255,.1))}.contact h2{font-size:clamp(34px,5vw,52px);margin:12px 0}.contact p{color:var(--muted);max-width:620px}.contact-actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:25px}
     footer{padding:28px 0;border-top:1px solid var(--line);color:#8290a8;font-size:13px}.footer-inner{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
     @media(max-width:800px){.links{display:none}.grid{grid-template-columns:1fr 1fr}.about{grid-template-columns:1fr;gap:25px}.hero{padding:85px 0 70px}}
@@ -81,13 +81,13 @@
         <div class="section-head"><span class="eyebrow">Selected work</span><h2>Projects built to be useful.</h2><p>One currently identified project is featured below. More verified projects can be added as their public links and descriptions are confirmed.</p></div>
         <div class="grid">
           <article class="card project">
-            <div class="image-placeholder" role="img" aria-label="QuranHub project image placeholder"><div><span>▧</span>QuranHub image placeholder<br><small>Replace when project images are ready</small></div></div><div class="project-top"><span class="project-tag">Digital resource · Live project</span><span aria-hidden="true">↗</span></div>
+            <div class="image-placeholder" data-image-rotation role="img" aria-label="Rotating Joes Technologies project images"><div class="placeholder-copy"><span>▧</span>Project images will appear here<br><small>Add image-1.jpg, image-2.jpg, etc. to site-images</small></div></div><div class="project-top"><span class="project-tag">Digital resource · Live project</span><span aria-hidden="true">↗</span></div>
             <h3>QuranHub</h3>
             <p>A digital Quran resource with tools for reading, listening to recitations and exploring Quran-related content. The project includes responsive web interfaces and media features.</p>
             <a href="https://quranhub1.github.io/" target="_blank" rel="noopener noreferrer">Visit QuranHub ↗</a>
           </article>
           <article class="card project">
-            <div class="image-placeholder" role="img" aria-label="Future project image placeholder"><div><span>＋</span>Project image placeholder<br><small>Upload a project screenshot here</small></div></div><div class="project-top"><span class="project-tag">Portfolio</span><span aria-hidden="true">＋</span></div>
+            <div class="image-placeholder" data-image-rotation role="img" aria-label="Rotating Joes Technologies project images"><div class="placeholder-copy"><span>＋</span>Project images will appear here<br><small>Add image-1.jpg, image-2.jpg, etc. to site-images</small></div></div><div class="project-top"><span class="project-tag">Portfolio</span><span aria-hidden="true">＋</span></div>
             <h3>Your next project</h3>
             <p>Have a product idea, business website or digital tool in mind? Let's discuss what needs to be built.</p>
             <a href="#contact">Start a conversation ↗</a>
@@ -109,6 +109,49 @@
   </main>
 
   <footer><div class="wrap footer-inner"><span>© <span id="year"></span> Joes Technologies. All rights reserved.</span><span>Built with purpose. Designed for people.</span></div></footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Add images named image-1.jpg through image-12.jpg to the site-images folder.
+    // Each image panel advances to the next available image every five seconds.
+    const imageFiles = Array.from({ length: 12 }, (_, index) =>
+      `site-images/image-${index + 1}.jpg`
+    );
+
+    document.querySelectorAll('[data-image-rotation]').forEach((panel, panelIndex) => {
+      const image = document.createElement('img');
+      image.alt = 'Joes Technologies project showcase';
+      image.loading = 'lazy';
+      panel.appendChild(image);
+
+      let currentIndex = panelIndex;
+      let rotationTimer;
+
+      function showNextAvailableImage() {
+        let checked = 0;
+
+        function tryNext() {
+          if (checked >= imageFiles.length) return;
+          const file = imageFiles[currentIndex % imageFiles.length];
+          currentIndex = (currentIndex + 1) % imageFiles.length;
+          checked += 1;
+
+          const candidate = new Image();
+          candidate.onload = () => {
+            image.src = file;
+            image.classList.add('is-visible');
+            panel.classList.add('has-image');
+            rotationTimer = window.setTimeout(showNextAvailableImage, 5000);
+          };
+          candidate.onerror = tryNext;
+          candidate.src = file;
+        }
+
+        tryNext();
+      }
+
+      showNextAvailableImage();
+    });
+  </script>
 </body>
 </html>
