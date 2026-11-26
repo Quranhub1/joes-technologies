@@ -13,6 +13,23 @@
   <style>
     :root{--bg:#0b1020;--panel:#111a2e;--panel2:#151f35;--text:#f4f7ff;--muted:#aab5ca;--line:rgba(255,255,255,.1);--cyan:#64e3d2;--blue:#7798ff;--max:1160px}
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 80% 0%,rgba(79,113,220,.18),transparent 34%),radial-gradient(ellipse at 0% 35%,rgba(60,210,190,.1),transparent 30%),var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;line-height:1.65}
+
+    /* Animated underwater ambience: soft expanding ripples and rising bubbles. */
+    body{isolation:isolate}
+    body > :not(.water-effects){position:relative;z-index:1}
+    .topbar{z-index:20}
+    .water-effects{position:fixed;inset:0;z-index:0;overflow:hidden;pointer-events:none;contain:strict}
+    .water-ripple{position:absolute;width:clamp(180px,28vw,390px);aspect-ratio:1;border:1px solid rgba(100,227,210,.13);border-radius:50%;box-shadow:0 0 35px rgba(65,190,210,.035),inset 0 0 35px rgba(65,190,210,.025);animation:rippleExpand 9s ease-out infinite}
+    .water-ripple:before,.water-ripple:after{content:"";position:absolute;inset:12%;border:1px solid rgba(119,152,255,.12);border-radius:50%}
+    .water-ripple:after{inset:25%;border-color:rgba(100,227,210,.1)}
+    .water-ripple.ripple-one{left:-8%;top:16%;animation-delay:-2s}
+    .water-ripple.ripple-two{right:-9%;top:53%;animation-delay:-5s;animation-duration:11s}
+    .water-ripple.ripple-three{left:34%;bottom:-23%;animation-delay:-7s;animation-duration:13s}
+    @keyframes rippleExpand{0%{transform:scale(.62);opacity:0}18%{opacity:.75}78%{opacity:.3}100%{transform:scale(1.35);opacity:0}}
+    .water-bubble{position:absolute;bottom:-45px;left:var(--bubble-x);width:var(--bubble-size);height:var(--bubble-size);border:1px solid rgba(155,231,239,.32);border-radius:50%;background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.32),rgba(100,227,210,.055) 42%,rgba(100,227,210,.015) 72%);box-shadow:inset -2px -3px 7px rgba(100,227,210,.07),0 0 12px rgba(100,227,210,.06);opacity:0;animation:bubbleRise var(--bubble-duration) linear var(--bubble-delay) infinite}
+    .water-bubble:after{content:"";position:absolute;top:19%;left:24%;width:23%;height:15%;border-radius:50%;background:rgba(255,255,255,.45);filter:blur(.4px);transform:rotate(-35deg)}
+    @keyframes bubbleRise{0%{transform:translate3d(0,0,0) scale(.72);opacity:0}10%{opacity:.62}48%{transform:translate3d(22px,-48vh,0) scale(1);opacity:.46}88%{opacity:.32}100%{transform:translate3d(-16px,-112vh,0) scale(.82);opacity:0}}
+    @media(prefers-reduced-motion:reduce){.water-ripple,.water-bubble{animation:none!important;display:none}}
     a{color:inherit;text-decoration:none}.wrap{width:min(var(--max),calc(100% - 44px));margin:auto}.topbar{position:sticky;top:0;z-index:20;background:rgba(11,16,32,.82);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
     .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px;font:700 19px 'Space Grotesk',sans-serif;letter-spacing:-.5px}.brand-mark{width:42px;height:42px;object-fit:contain;border-radius:10px;display:block}
     .links{display:flex;align-items:center;gap:28px;color:var(--muted);font-size:14px}.links a:hover{color:var(--cyan)}.nav-cta,.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border-radius:10px;background:var(--cyan);color:#07131d;font-weight:700;font-size:14px;transition:.2s}.nav-cta:hover,.btn:hover{transform:translateY(-2px);filter:brightness(1.06)}
@@ -321,6 +338,21 @@
 
   <footer><div class="wrap footer-inner"><span>© <span id="year"></span> Joes Technologies. All rights reserved.</span><nav class="footer-legal" aria-label="Legal information"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Service</a></nav><span>Built with purpose. Designed for people.</span></div></footer>
   <script>
+
+    // Add lightweight, continuously rising bubbles behind the page content.
+    const bubbleLayer = document.querySelector('.water-effects');
+    if (bubbleLayer && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      for (let i = 0; i < 26; i += 1) {
+        const bubble = document.createElement('span');
+        bubble.className = 'water-bubble';
+        bubble.style.setProperty('--bubble-x', `${(i * 37 + 11) % 100}%`);
+        bubble.style.setProperty('--bubble-size', `${5 + (i * 7) % 13}px`);
+        bubble.style.setProperty('--bubble-duration', `${13 + (i * 5) % 15}s`);
+        bubble.style.setProperty('--bubble-delay', `-${(i * 1.9) % 24}s`);
+        bubbleLayer.appendChild(bubble);
+      }
+    }
+
     document.getElementById('year').textContent = new Date().getFullYear();
 
     // Keep section navigation working without leaving a fragment in the address bar.
