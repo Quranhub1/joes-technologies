@@ -98,21 +98,26 @@
               <div class="film-strip" aria-hidden="true">
                 <div class="film-frame"><img src="site-images/image1.webp" alt=""></div>
                 <div class="film-frame"><img src="site-images/image2.webp" alt=""></div>
-                <div class="film-frame"><img src="site-images/image-1.svg" alt=""></div>
-                <div class="film-frame"><img src="site-images/image-2.svg" alt=""></div>
-                <div class="film-frame"><img src="site-images/image-3.svg" alt=""></div>
-                <div class="film-frame"><img src="site-images/image-4.svg" alt=""></div>
+                <div class="film-frame"><img src="site-images/Screenshot%20(7).png" alt=""></div>
+                <div class="film-frame"><img src="site-images/Screenshot%20(8).png" alt=""></div>
+                <div class="film-frame"><img src="site-images/Screenshot%20(15).png" alt=""></div>
+                <div class="film-frame"><img src="site-images/Screenshot%20(16).png" alt=""></div>
+                <div class="film-frame"><img src="site-images/Screenshot%20(17).png" alt=""></div>
+                <div class="film-frame"><img src="site-images/Screenshot%20(18).png" alt=""></div>
               </div>
               <div class="film-strip" aria-hidden="true">
                 <div class="film-frame"><img src="site-images/image1.webp" alt=""></div>
                 <div class="film-frame"><img src="site-images/image2.webp" alt=""></div>
-                <div class="film-frame"><img src="site-images/image-1.svg" alt=""></div>
-                <div class="film-frame"><img src="site-images/image-2.svg" alt=""></div>
-                <div class="film-frame"><img src="site-images/image-3.svg" alt=""></div>
-                <div class="film-frame"><img src="site-images/image-4.svg" alt=""></div>
+                <div class="film-frame"><img src="site-images/Screenshot%20(7).png" alt=""></div>
+                <div class="film-frame"><img src="site-images/Screenshot%20(8).png" alt=""></div>
+                <div class="film-frame"><img src="site-images/Screenshot%20(15).png" alt=""></div>
+                <div class="film-frame"><img src="site-images/Screenshot%20(16).png" alt=""></div>
+                <div class="film-frame"><img src="site-images/Screenshot%20(17).png" alt=""></div>
+                <div class="film-frame"><img src="site-images/Screenshot%20(18).png" alt=""></div>
               </div>
             </div>
           </div>
+        </div>
         </div>
         <div class="section-head"><span class="eyebrow">Selected work</span><h2>Projects built to be useful.</h2><p>One currently identified project is featured below. More verified projects can be added as their public links and descriptions are confirmed.</p></div>
         <div class="grid">
@@ -148,11 +153,17 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Replace these 20 SVG placeholders with your own images using the same filenames.
-    // Each project image panel rotates through all 20 files every five seconds.
+    // Uploaded project images are shown first; remaining SVGs are fallback placeholders.
+    // Each project image panel rotates through the available images every five seconds.
     const imageFiles = [
       'site-images/image1.webp',
       'site-images/image2.webp',
+      'site-images/Screenshot (7).png',
+      'site-images/Screenshot (8).png',
+      'site-images/Screenshot (15).png',
+      'site-images/Screenshot (16).png',
+      'site-images/Screenshot (17).png',
+      'site-images/Screenshot (18).png',
       ...Array.from({ length: 20 }, (_, index) => `site-images/image-${index + 1}.svg`)
     ];
 
