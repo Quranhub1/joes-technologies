@@ -23,6 +23,19 @@
     .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{padding:27px;background:linear-gradient(160deg,rgba(21,31,53,.94),rgba(14,22,40,.94));border:1px solid var(--line);border-radius:17px;min-height:210px}.icon{width:44px;height:44px;display:grid;place-items:center;border-radius:12px;background:rgba(100,227,210,.1);color:var(--cyan);font-size:20px;margin-bottom:22px}.card h3{font-size:20px;margin-bottom:9px;letter-spacing:-.5px}.card p{color:var(--muted);font-size:14px;margin:0}
     .about{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}.about-panel{border:1px solid var(--line);border-radius:20px;padding:30px;background:linear-gradient(145deg,rgba(100,227,210,.08),rgba(119,152,255,.08))}.about-panel .big{font:700 54px 'Space Grotesk';color:var(--cyan);line-height:1}.about-panel p{color:var(--muted);margin:12px 0 0}.ticks{list-style:none;padding:0;margin:25px 0 0}.ticks li{padding:9px 0;color:var(--muted);border-bottom:1px solid var(--line)}.ticks li:before{content:'✓';color:var(--cyan);font-weight:700;margin-right:12px}
     .project{display:flex;flex-direction:column;min-height:260px}.image-placeholder{height:180px;border:1px dashed rgba(170,181,202,.45);border-radius:12px;background:linear-gradient(135deg,rgba(100,227,210,.07),rgba(119,152,255,.08));display:grid;place-items:center;text-align:center;color:#aab5ca;font-size:13px;margin:0 0 20px;overflow:hidden;position:relative}.image-placeholder span{display:block;font-size:28px;color:#64e3d2;margin-bottom:5px}.image-placeholder img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s ease}.image-placeholder img.is-visible{opacity:1}.image-placeholder .placeholder-copy{position:relative;z-index:1;padding:12px}.image-placeholder.has-image .placeholder-copy{display:none}.contact-details{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}.contact-details a{border:1px solid var(--line);background:rgba(11,16,32,.3);padding:11px 14px;border-radius:10px;font-size:14px;color:var(--text)}.project-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:25px}.project-tag{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--cyan);font-weight:700}.project h3{font-size:25px}.project p{color:var(--muted);font-size:14px}.project a{margin-top:auto;color:var(--cyan);font-size:14px;font-weight:700}
+    .project-film{position:relative;overflow:hidden;margin:0 0 42px;padding:26px 0 30px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:linear-gradient(90deg,rgba(100,227,210,.04),rgba(119,152,255,.06),rgba(100,227,210,.04))}
+    .film-title{text-align:center;font:700 clamp(30px,5vw,54px) 'Space Grotesk',sans-serif;letter-spacing:.18em;margin:0 0 22px;color:var(--text);text-shadow:0 0 28px rgba(100,227,210,.22)}
+    .film-window{overflow:hidden;position:relative;mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+    .film-track{display:flex;gap:18px;width:max-content;animation:filmTravel 34s linear infinite;padding:12px 0}
+    .film-strip{display:flex;gap:12px;padding:17px 18px;position:relative;background:linear-gradient(180deg,#202b43,#111a2e 50%,#202b43);border:1px solid rgba(255,255,255,.22);border-radius:10px;box-shadow:0 18px 40px rgba(0,0,0,.28)}
+    .film-strip:before,.film-strip:after{content:"";position:absolute;left:0;right:0;height:8px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.72) 0 14px,transparent 14px 28px);opacity:.72}
+    .film-strip:before{top:5px}.film-strip:after{bottom:5px}
+    .film-frame{width:clamp(150px,20vw,230px);height:116px;flex:0 0 auto;overflow:hidden;border:2px solid rgba(255,255,255,.14);border-radius:4px;background:#0b1020;transform:translateY(var(--wave,0)) rotate(var(--tilt,0deg))}
+    .film-frame:nth-child(4n+1){--wave:-7px;--tilt:-2deg}.film-frame:nth-child(4n+2){--wave:4px;--tilt:1.5deg}.film-frame:nth-child(4n+3){--wave:8px;--tilt:-1deg}.film-frame:nth-child(4n){--wave:-3px;--tilt:2deg}
+    .film-frame img{width:100%;height:100%;object-fit:cover;display:block}
+    @keyframes filmTravel{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+    .project-film:hover .film-track{animation-play-state:paused}
+    @media(prefers-reduced-motion:reduce){.film-track{animation:none}}
     .contact{border:1px solid rgba(100,227,210,.22);border-radius:22px;padding:48px;background:linear-gradient(120deg,rgba(100,227,210,.09),rgba(119,152,255,.1))}.contact h2{font-size:clamp(34px,5vw,52px);margin:12px 0}.contact p{color:var(--muted);max-width:620px}.contact-actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:25px}
     footer{padding:28px 0;border-top:1px solid var(--line);color:#8290a8;font-size:13px}.footer-inner{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
     @media(max-width:800px){.links{display:none}.grid{grid-template-columns:1fr 1fr}.about{grid-template-columns:1fr;gap:25px}.hero{padding:85px 0 70px}}
@@ -78,6 +91,29 @@
 
     <section id="work">
       <div class="wrap">
+        <div class="project-film" aria-label="Our projects film carousel">
+          <h2 class="film-title">OUR PROJECTS</h2>
+          <div class="film-window">
+            <div class="film-track">
+              <div class="film-strip" aria-hidden="true">
+                <div class="film-frame"><img src="site-images/image1.webp" alt=""></div>
+                <div class="film-frame"><img src="site-images/image2.webp" alt=""></div>
+                <div class="film-frame"><img src="site-images/image-1.svg" alt=""></div>
+                <div class="film-frame"><img src="site-images/image-2.svg" alt=""></div>
+                <div class="film-frame"><img src="site-images/image-3.svg" alt=""></div>
+                <div class="film-frame"><img src="site-images/image-4.svg" alt=""></div>
+              </div>
+              <div class="film-strip" aria-hidden="true">
+                <div class="film-frame"><img src="site-images/image1.webp" alt=""></div>
+                <div class="film-frame"><img src="site-images/image2.webp" alt=""></div>
+                <div class="film-frame"><img src="site-images/image-1.svg" alt=""></div>
+                <div class="film-frame"><img src="site-images/image-2.svg" alt=""></div>
+                <div class="film-frame"><img src="site-images/image-3.svg" alt=""></div>
+                <div class="film-frame"><img src="site-images/image-4.svg" alt=""></div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="section-head"><span class="eyebrow">Selected work</span><h2>Projects built to be useful.</h2><p>One currently identified project is featured below. More verified projects can be added as their public links and descriptions are confirmed.</p></div>
         <div class="grid">
           <article class="card project">
