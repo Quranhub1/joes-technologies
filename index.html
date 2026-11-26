@@ -122,7 +122,7 @@
         <div class="section-head"><span class="eyebrow">Selected work</span><h2>Projects built to be useful.</h2><p>One currently identified project is featured below. More verified projects can be added as their public links and descriptions are confirmed.</p></div>
         <div class="grid">
           <article class="card project">
-            <div class="image-placeholder" data-image-rotation role="img" aria-label="Rotating Joes Technologies project images"><div class="placeholder-copy"><span>▧</span>Project images will appear here<br><small>Replace image-1.svg to image-20.svg in site-images</small></div></div><div class="project-top"><span class="project-tag">Digital resource · Live project</span><span aria-hidden="true">↗</span></div>
+            <div class="image-placeholder" data-image-rotation role="img" aria-label="Rotating Joes Technologies project images"><div class="placeholder-copy"><span>▧</span>Project images will appear here<br><small>Add project images in site-images</small></div></div><div class="project-top"><span class="project-tag">Digital resource · Live project</span><span aria-hidden="true">↗</span></div>
             <h3>QuranHub</h3>
             <p>A digital Quran resource with tools for reading, listening to recitations and exploring Quran-related content. The project includes responsive web interfaces and media features.</p>
             <a href="https://quranhub1.github.io/" target="_blank" rel="noopener noreferrer">Visit QuranHub ↗</a>
@@ -158,13 +158,8 @@
     const imageFiles = [
       'site-images/image1.webp',
       'site-images/image2.webp',
-      'site-images/Screenshot (7).png',
-      'site-images/Screenshot (8).png',
-      'site-images/Screenshot (15).png',
-      'site-images/Screenshot (16).png',
-      'site-images/Screenshot (17).png',
-      'site-images/Screenshot (18).png',
-      ...Array.from({ length: 20 }, (_, index) => `site-images/image-${index + 1}.svg`)
+      ...Array.from({ length: 6 }, (_, index) => `site-images/image${index + 3}.png`),
+      ...Array.from({ length: 14 }, (_, index) => `site-images/image-${index + 7}.svg`)
     ];
 
     document.querySelectorAll('[data-image-rotation]').forEach((panel, panelIndex) => {
