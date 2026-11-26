@@ -81,13 +81,13 @@
         <div class="section-head"><span class="eyebrow">Selected work</span><h2>Projects built to be useful.</h2><p>One currently identified project is featured below. More verified projects can be added as their public links and descriptions are confirmed.</p></div>
         <div class="grid">
           <article class="card project">
-            <div class="image-placeholder" data-image-rotation role="img" aria-label="Rotating Joes Technologies project images"><div class="placeholder-copy"><span>▧</span>Project images will appear here<br><small>Add image-1.jpg, image-2.jpg, etc. to site-images</small></div></div><div class="project-top"><span class="project-tag">Digital resource · Live project</span><span aria-hidden="true">↗</span></div>
+            <div class="image-placeholder" data-image-rotation role="img" aria-label="Rotating Joes Technologies project images"><div class="placeholder-copy"><span>▧</span>Project images will appear here<br><small>Replace image-1.svg to image-20.svg in site-images</small></div></div><div class="project-top"><span class="project-tag">Digital resource · Live project</span><span aria-hidden="true">↗</span></div>
             <h3>QuranHub</h3>
             <p>A digital Quran resource with tools for reading, listening to recitations and exploring Quran-related content. The project includes responsive web interfaces and media features.</p>
             <a href="https://quranhub1.github.io/" target="_blank" rel="noopener noreferrer">Visit QuranHub ↗</a>
           </article>
           <article class="card project">
-            <div class="image-placeholder" data-image-rotation role="img" aria-label="Rotating Joes Technologies project images"><div class="placeholder-copy"><span>＋</span>Project images will appear here<br><small>Add image-1.jpg, image-2.jpg, etc. to site-images</small></div></div><div class="project-top"><span class="project-tag">Portfolio</span><span aria-hidden="true">＋</span></div>
+            <div class="image-placeholder" data-image-rotation role="img" aria-label="Rotating Joes Technologies project images"><div class="placeholder-copy"><span>＋</span>Project images will appear here<br><small>Replace image-1.svg to image-20.svg in site-images</small></div></div><div class="project-top"><span class="project-tag">Portfolio</span><span aria-hidden="true">＋</span></div>
             <h3>Your next project</h3>
             <p>Have a product idea, business website or digital tool in mind? Let's discuss what needs to be built.</p>
             <a href="#contact">Start a conversation ↗</a>
@@ -112,10 +112,10 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Add images named image-1.jpg through image-12.jpg to the site-images folder.
-    // Each image panel advances to the next available image every five seconds.
-    const imageFiles = Array.from({ length: 12 }, (_, index) =>
-      `site-images/image-${index + 1}.jpg`
+    // Replace these 20 SVG placeholders with your own images using the same filenames.
+    // Each project image panel rotates through all 20 files every five seconds.
+    const imageFiles = Array.from({ length: 20 }, (_, index) =>
+      `site-images/image-${index + 1}.svg`
     );
 
     document.querySelectorAll('[data-image-rotation]').forEach((panel, panelIndex) => {
